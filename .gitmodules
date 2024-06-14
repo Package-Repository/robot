@@ -1,6 +1,3 @@
-[submodule "src/api"]
-	path = src/api
-	url = https://github.com/Package-Repository/api
 [submodule "src/comp/vision"]
 	path = src/comp/vision
 	url = https://github.com/package-repository/vision
