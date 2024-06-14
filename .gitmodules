@@ -1,9 +1,9 @@
-[submodule "src/componenents/vision"]
-	path = src/componenents/vision
+[submodule "src/components/vision"]
+	path = src/components/vision
 	url = https://github.com/package-repository/vision
 [submodule "src/api"]
 	path = src/api
 	url = https://github.com/Package-Repository/api
-[submodule "src/componenents/sensors"]
-	path = src/componenents/sensors
+[submodule "src/components/sensors"]
+	path = src/components/sensors
 	url = https://github.com/Package-Repository/sensors
