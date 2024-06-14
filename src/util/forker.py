@@ -4,33 +4,38 @@ import subprocess
 import signal
 import os
 
-def fork_processes(scripts):
-    return [subprocess.Popen([script]) for script in scripts]
-
-def terminate_processes(processes):
-    for process in processes:
-        if process.poll() is None:
-            process.kill()
-    print("All child processes terminated.")
-
-def signal_handler(signum, frame):
-    print("Received signal to terminate. Cleaning up...")
-    terminate_processes(Forker.processes)
-    os._exit(0)
 
 class Forker:
-    processes = []
+    def __init__(self):
+        self.processes = []
 
-    @staticmethod
-    def run_scripts(scripts):
-        Forker.processes = fork_processes(scripts)
-        signal.signal(signal.SIGINT, signal_handler)
-        for process in Forker.processes:
-            process.wait()
+    def run_scripts(self, scripts):
+        self.processes = [subprocess.Popen([script]) for script in scripts]
+
+    def run_script(self, script: str):
+        process = subprocess.Popen([script])
+        self.processes.append(process)
+
+    def terminate_processes(self):
+        for process in self.processes:
+            if process.poll() is None:
+                process.kill()
+        print("All child processes terminated.")
+
+
+def signal_handler(forker):
+    def handler(signum, frame):
+        TERMINATE_SIGNAL_MSG = "Received signal to terminate. Cleaning up..."
+        print(TERMINATE_SIGNAL_MSG)
+        forker.terminate_processes()
+        os._exit(0)
+    return handler
+
 
 if __name__ == "__main__":
-    Forker.run_scripts([
-        "unity_srv.py",
-        "speak_srv.py",
-        "ar_srv.py"
+    forker = Forker()
+    forker.run_scripts([
+        "server.py"
     ])
+    signal.signal(signal.SIGINT, signal_handler(forker))
+    signal.pause()
