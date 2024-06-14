@@ -4,12 +4,12 @@ from client import call_service
 from services import ServiceNames, ServicePorts
 from req_resp import GenericRequest
 
-def speak(phrase: str):
-    call_service(port=ServicePorts[ServiceNames.SPEAK], 
+def fork(script: str):
+    call_service(port=ServicePorts[ServiceNames.FORK], 
                 request=GenericRequest(
-                    function="speak", 
-                    args={"phrase": phrase}
+                    function="run_script", 
+                    args={"script": script}
     ))
 
 if __name__ == "__main__":
-    speak("Starting Activity Recognition")
+    fork("server.py")

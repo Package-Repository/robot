@@ -30,5 +30,4 @@ I put all of this here to spare you a lot of pain.
     - 2. When you commit to the submodule, you will have to commit that you changed the submodule in this main module. Yes it is slightly annoying.
     - 3. If you work on the submodule separately (meaning you git checkout only the submodule and make changes) this main module WON'T KNOW until you tell it by running the update/pull command
 
-    git submodule update --init --recursive          <---- first time you check out
     git pull --recurse-submodules                    <---- to pull all changes
