@@ -1,4 +1,9 @@
 #!/bin/bash
+# Zix
+# SSH with password and IP address is for l00sers
+# This is so you can link a name to the address (like DNS)
+# It also does key gen stuff so you don't have to enter password to login to host anymore
+
 
 if [ "$#" -ne 2 ]; then
     echo "Usage: $0 <hostname> <ip_address>"
