@@ -24,8 +24,8 @@ I prefer to keep executable and source code separate so there is a [install.sh](
 Submodules are really nice but you have to remember some annoying things about them to not mess up the repo.
 I put all of this here to spare you a lot of pain.
 
-    - 1. If you change a submodule git will automatically generate a branch for you so you might want to checkout the main/master branch. 
-    - 2. When you commit to the submodule, you will have to commit that you changed the submodule in this module. Yes it is slightly annoying.
+    - 1. When the submodules are cloned git automatically checks out a generated branch, NOT THE MAIN, so you might want to checkout the main/master branch (unless of course you don't want to touch the original code). 
+    - 2. When you commit to the submodule, you will have to commit that you changed the submodule in this main module. Yes it is slightly annoying.
     - 3. If you work on the submodule separately (meaning you git checkout only the submodule and make changes) this main module WON'T KNOW until you tell it by running the update/pull command
 
     git submodule update --init --recursive          <---- first time you check out
