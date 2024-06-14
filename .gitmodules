@@ -3,4 +3,4 @@
 	url = https://github.com/package-repository/vision
 [submodule "src/api"]
 	path = src/api
-	url = https://github.com/Package-Repository/RobotAPI
+	url = https://github.com/Package-Repository/api
