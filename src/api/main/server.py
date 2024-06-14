@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 import socket
-from server_log import Logging
-from defaults import Defaults
+from utility.server_log import Logging
+from utility.defaults import Defaults
 import pickle
 
-def loop(name, sock, callback):
+def loop(name: str, sock: socket.socket, callback):
     conn, addr = sock.accept()
     with conn:
         Logging.log_connection_message(addr)

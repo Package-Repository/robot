@@ -1,0 +1,3 @@
+[submodule "src/RobotAPI"]
+	path = src/RobotAPI
+	url = https://github.com/Package-Repository/RobotAPI

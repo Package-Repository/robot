@@ -6,9 +6,9 @@ class Logging():
         print(f"{name} Server is Up and Running on {host}:{port}")
 
     @staticmethod
-    def log_connection_message(addr):
+    def log_connection_message(addr: str):
         print(f"Connected by {addr}")
         
     @staticmethod
-    def log_data_rcv_message(name):
+    def log_data_rcv_message(name: str):
         print(f"Received Data From {name} Client")

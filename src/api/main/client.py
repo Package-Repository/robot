@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
 import socket
-from defaults import Defaults
+from utility.defaults import Defaults
 import pickle
 
-def call_service(host=Defaults.LOCALHOST, port=Defaults.PORT, request=Defaults.request):
+def call_service(host=Defaults.LOCALHOST, port=Defaults.PORT, request=Defaults.REQUEST):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((host, port))
         raw_request = pickle.dumps(request)

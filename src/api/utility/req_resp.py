@@ -7,10 +7,3 @@ from typing import Callable
 class GenericRequest():
     function: Callable
     args    : dict
-
-@dataclass
-class Object():
-    x : int
-    y : int
-    z : int
-
