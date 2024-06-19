@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from go import Go1
 from services import ServiceNames, ServicePorts
 from gen_srv import start_generic_server
